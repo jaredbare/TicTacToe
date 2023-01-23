@@ -17,15 +17,6 @@ namespace TicTacToe
             // Create a game choiceArray array to store the players' choices
             choiceArray = new char[9];
 
-            // Ask each player in turn for their choice and update the game choiceArray array
-            for (int i = 0; i < choiceArray.Length; i++)
-            {
-                Console.Write($"Player {((i % 2) + 1)}: Enter your choice: ");
-                choiceArray[i] = Console.ReadLine()[0];
-                // Print the choiceArray by calling the method in the supporting class
-                PrintchoiceArray();
-            }
-
             // Check for a winner by calling the method in the supporting class
             // and notify the players when a win has occurred and which player won the game
             int winner = SupportingClass.CheckForWinner(choiceArray);
@@ -33,15 +24,6 @@ namespace TicTacToe
                 Console.WriteLine($"Player {winner} has won the game!");
             else
                 Console.WriteLine("It's a draw!");
-        }
-
-        static void PrintchoiceArray()
-        {
-            Console.WriteLine($" {choiceArray[0]} | {choiceArray[1]} | {choiceArray[2]}");
-            Console.WriteLine("-----------");
-            Console.WriteLine($" {choiceArray[3]} | {choiceArray[4]} | {choiceArray[5]}");
-            Console.WriteLine("-----------");
-            Console.WriteLine($" {choiceArray[6]} | {choiceArray[7]} | {choiceArray[8]}");
         }
     }
 
