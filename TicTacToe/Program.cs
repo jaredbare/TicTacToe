@@ -96,13 +96,14 @@ namespace TicTacToe
                 else
                     winner = 2;
             if (choiceArray[2] == choiceArray[4] && choiceArray[4] == choiceArray[6])
-                if(choiceArray[0] == 'X')
+                if (choiceArray[0] == 'X')
                     winner = 1;
                 else
-                winner = 2;
+                    winner = 2;
 
             else
-                return winner;
+                winner = 0;
+            return winner;
         }
         static void PrintchoiceArray(char[] choiceArray)
         {
