@@ -62,7 +62,7 @@ namespace TicTacToe
                 winner = 0;
             return winner;
         }
-        static void PrintchoiceArray(char[] choiceArray)
+        public void PrintchoiceArray(char[] choiceArray)
         {
             Console.WriteLine($" {choiceArray[0]} | {choiceArray[1]} | {choiceArray[2]}");
             Console.WriteLine("-----------");
