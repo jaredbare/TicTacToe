@@ -50,32 +50,59 @@ namespace TicTacToe
     public class SupportingClass
     {
         // Receive the “choiceArray” array from the driver class
-        public static bool CheckForWinner(char[] choiceArray)
+        public static int CheckForWinner(char[] choiceArray)
         {
             // Horizontal wins
-            bool winner = false;
+
+            int winner = 0;
             if (choiceArray[0] == choiceArray[1] && choiceArray[1] == choiceArray[2])
-                winner = true;
+                if (choiceArray[0] == 'X')
+                    winner = 1;
+                else
+                    winner = 2;
+
             if (choiceArray[3] == choiceArray[4] && choiceArray[4] == choiceArray[5])
-                winner = true;
+                if (choiceArray[3] == 'X')
+                    winner = 1;
+                else
+                    winner = 2;
             if (choiceArray[6] == choiceArray[7] && choiceArray[7] == choiceArray[8])
-                winner = true;
+                if (choiceArray[6] == 'X')
+                    winner = 1;
+                else
+                    winner = 2;
 
             // Vertical wins
             if (choiceArray[0] == choiceArray[3] && choiceArray[3] == choiceArray[6])
-                winner = true;
+                if (choiceArray[0] == 'X')
+                    winner = 1;
+                else
+                    winner = 2;
             if (choiceArray[1] == choiceArray[4] && choiceArray[4] == choiceArray[7])
-                winner = true;
+                if (choiceArray[0] == 'X')
+                    winner = 1;
+                else
+                    winner = 2;
             if (choiceArray[2] == choiceArray[5] && choiceArray[5] == choiceArray[8])
-                winner = true;
+                if (choiceArray[0] == 'X')
+                    winner = 1;
+                else
+                    winner = 2;
 
             // Diagonal wins
             if (choiceArray[0] == choiceArray[4] && choiceArray[4] == choiceArray[8])
-                winner = true;
+                if (choiceArray[0] == 'X')
+                    winner = 1;
+                else
+                    winner = 2;
             if (choiceArray[2] == choiceArray[4] && choiceArray[4] == choiceArray[6])
-                winner = true;
+                if(choiceArray[0] == 'X')
+                    winner = 1;
+                else
+                winner = 2;
 
-            return winner;
+            else
+                return winner;
         }
         static void PrintchoiceArray(char[] choiceArray)
         {
