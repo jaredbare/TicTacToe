@@ -15,16 +15,16 @@ namespace TicTacToe
             // Create a game choiceArray array to store the players' choices
             //choiceArray = new char[9];
 
-            int winner = 0;
+            SupportingClass sc2 = new SupportingClass();
 
             Console.WriteLine("Welcome to Tic-Tac-Toe");
 
             int turn = 1;
             char[] choiceArray = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-            while (winner < 0)
+            while (sc2.CheckForWinner(choiceArray) == 0)
             {
-
+                
                 if (turn == 1)
                 {
                     char ticTac = 'X';
@@ -37,7 +37,13 @@ namespace TicTacToe
                     game(ticTac, choiceArray);
                     turn = turn - 1;
                 }
+                Console.WriteLine(sc2.CheckForWinner(choiceArray));
             }
+
+         if (sc2.CheckForWinner(choiceArray) >= 0)
+                Console.WriteLine($"Player {sc2.CheckForWinner(choiceArray)} has won the game!");
+         else
+                Console.WriteLine("It's a draw!");
         }
 
         public static void game(char ticTac, char[] choiceArray)
@@ -54,15 +60,8 @@ namespace TicTacToe
 
             choiceArray[numChoice - 1] = ticTac;
 
-            ticTac = 'O';
 
-            // Check for a winner by calling the method in the supporting class
-            // and notify the players when a win has occurred and which player won the game
-            int winner = SupportingClass.CheckForWinner(choiceArray);
-            if (winner > 0)
-                Console.WriteLine($"Player {winner} has won the game!");
-            else
-                Console.WriteLine("It's a draw!");
         }
     }
 }
+

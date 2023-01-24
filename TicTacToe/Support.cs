@@ -7,12 +7,12 @@ namespace TicTacToe
     public class SupportingClass
     {
         // Receive the “choiceArray” array from the driver class
-        public static int CheckForWinner(char[] choiceArray)
+        public int CheckForWinner(char[] choiceArray)
         {
             // Horizontal wins
 
-            int winner = 0;
-            if (choiceArray[0] == choiceArray[1] && choiceArray[1] == choiceArray[2])
+            int winner;
+            if ((choiceArray[0] == choiceArray[1]) & (choiceArray[1] == choiceArray[2]))
                 if (choiceArray[0] == 'X')
                     winner = 1;
                 else
