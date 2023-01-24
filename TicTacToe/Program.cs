@@ -91,6 +91,7 @@ namespace TicTacToe
             // check to see if a spot is already taken
             while (choiceArray[numChoice - 1] == 'X' || choiceArray[numChoice - 1] == 'O')
             {
+                Console.WriteLine("");
                 Console.Write("That spot is already taken!\n");
                 Console.Write("Choose another position: ");
                 numChoice = Int32.Parse(Console.ReadLine());
