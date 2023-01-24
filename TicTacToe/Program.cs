@@ -29,6 +29,9 @@ namespace TicTacToe
                 if (turn == 1)
                 {
                     char ticTac = 'X';
+                    Console.WriteLine("");
+                    Console.WriteLine("Player 1: Which position would you like to choose?");
+                    Console.WriteLine("");
                     Game(ticTac, choiceArray);
                     turn = turn + 1;
                     counter++;
@@ -36,6 +39,9 @@ namespace TicTacToe
                 else
                 {
                     char ticTac = 'O';
+                    Console.WriteLine("");
+                    Console.WriteLine("Player 2: Which position would you like to choose?");
+                    Console.WriteLine("");
                     Game(ticTac, choiceArray);
                     turn = turn - 1;
                     counter++;
@@ -45,9 +51,14 @@ namespace TicTacToe
          SupportingClass sc = new SupportingClass();
          sc.PrintchoiceArray(choiceArray);
             if (sc2.CheckForWinner(choiceArray) > 0)
+            {
+                Console.WriteLine("");
                 Console.WriteLine($"Player {sc2.CheckForWinner(choiceArray)} has won the game!");
+            }
             else
+            {
                 Console.WriteLine("It's a draw!");
+            }  
 
         }
 
@@ -59,13 +70,13 @@ namespace TicTacToe
 
             sc.PrintchoiceArray(choiceArray);
 
-            Console.Write("Which position would you like to choose? ");
+            Console.WriteLine("");
 
             numChoice = Int32.Parse(Console.ReadLine());
 
             while (choiceArray[numChoice - 1] == 'X' || choiceArray[numChoice - 1] == 'O')
             {
-                Console.Write("That spot is already taken asshole!\n");
+                Console.Write("That spot is already taken!\n");
                 Console.Write("Choose another position: ");
                 numChoice = Int32.Parse(Console.ReadLine());
             }

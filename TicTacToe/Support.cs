@@ -113,13 +113,26 @@ namespace TicTacToe
             }
             return winner;
         }
-        public void PrintchoiceArray(char[] choiceArray)
+        /*public void PrintchoiceArray2(char[] choiceArray)
         {
             Console.WriteLine($" {choiceArray[0]} | {choiceArray[1]} | {choiceArray[2]}");
             Console.WriteLine("-----------");
             Console.WriteLine($" {choiceArray[3]} | {choiceArray[4]} | {choiceArray[5]}");
             Console.WriteLine("-----------");
             Console.WriteLine($" {choiceArray[6]} | {choiceArray[7]} | {choiceArray[8]}");
+        }*/
+
+        public void PrintchoiceArray(char[] choiceArray)
+        {
+            Console.WriteLine("       |       |       ");
+            Console.WriteLine($"   {choiceArray[0]}   |   {choiceArray[1]}   |   {choiceArray[2]}   ");
+            Console.WriteLine("_______|_______|_______");
+            Console.WriteLine("       |       |       ");
+            Console.WriteLine($"   {choiceArray[3]}   |   {choiceArray[4]}   |   {choiceArray[5]}   ");
+            Console.WriteLine("_______|_______|_______");
+            Console.WriteLine("       |       |       ");
+            Console.WriteLine($"   {choiceArray[6]}   |   {choiceArray[7]}   |   {choiceArray[8]}   ");
+            Console.WriteLine("       |       |       ");
         }
     }
 }
