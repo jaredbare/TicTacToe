@@ -28,16 +28,16 @@ namespace TicTacToe
                 if (turn == 1)
                 {
                     char ticTac = 'X';
-                    game(ticTac, choiceArray);
+                    Game(ticTac, choiceArray);
                     turn = turn + 1;
                 }
                 else
                 {
                     char ticTac = 'O';
-                    game(ticTac, choiceArray);
+                    Game(ticTac, choiceArray);
                     turn = turn - 1;
                 }
-                Console.WriteLine(sc2.CheckForWinner(choiceArray));
+                
             }
 
          if (sc2.CheckForWinner(choiceArray) >= 0)
@@ -46,7 +46,7 @@ namespace TicTacToe
                 Console.WriteLine("It's a draw!");
         }
 
-        public static void game(char ticTac, char[] choiceArray)
+        public static void Game(char ticTac, char[] choiceArray)
         {
             int numChoice = 0;
 
