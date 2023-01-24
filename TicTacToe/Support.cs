@@ -6,12 +6,14 @@ namespace TicTacToe
 {
     public class SupportingClass
     {
-        // Receive the “choiceArray” array from the driver class
+        // create checkforwinner method that determines if someone has won
         public int CheckForWinner(char[] choiceArray)
         {
-            // Horizontal wins
 
+            // create winner variable
             int winner;
+
+            // check to see if there is a winner horizontally
             if ((choiceArray[0] == choiceArray[1]) & (choiceArray[1] == choiceArray[2]))
             {
                 if (choiceArray[0] == 'X')
@@ -49,7 +51,8 @@ namespace TicTacToe
                 }
 
             }
-            // Vertical wins
+
+            // check to see if there is a winner vertically
             else if (choiceArray[0] == choiceArray[3] && choiceArray[3] == choiceArray[6])
             {
                 if (choiceArray[0] == 'X')
@@ -83,7 +86,8 @@ namespace TicTacToe
                     winner = 2;
                 }
             }
-            // Diagonal wins
+
+            // Check to see if there is a winner diagonally
             else if (choiceArray[0] == choiceArray[4] && choiceArray[4] == choiceArray[8])
             {
                 if (choiceArray[0] == 'X')
@@ -107,21 +111,15 @@ namespace TicTacToe
                 }
             }
 
+            // check if it is a tie game
             else
             {
                 winner = 0;
             }
             return winner;
         }
-        /*public void PrintchoiceArray2(char[] choiceArray)
-        {
-            Console.WriteLine($" {choiceArray[0]} | {choiceArray[1]} | {choiceArray[2]}");
-            Console.WriteLine("-----------");
-            Console.WriteLine($" {choiceArray[3]} | {choiceArray[4]} | {choiceArray[5]}");
-            Console.WriteLine("-----------");
-            Console.WriteLine($" {choiceArray[6]} | {choiceArray[7]} | {choiceArray[8]}");
-        }*/
 
+        // Method that prints the tic tac toe game board
         public void PrintchoiceArray(char[] choiceArray)
         {
             Console.WriteLine("       |       |       ");
