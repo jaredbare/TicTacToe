@@ -20,9 +20,10 @@ namespace TicTacToe
             Console.WriteLine("Welcome to Tic-Tac-Toe");
 
             int turn = 1;
+            int counter = 0;
             char[] choiceArray = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-            while (sc2.CheckForWinner(choiceArray) == 0)
+            while (sc2.CheckForWinner(choiceArray) == 0 && counter<9)
             {
                 
                 if (turn == 1)
@@ -30,22 +31,24 @@ namespace TicTacToe
                     char ticTac = 'X';
                     Game(ticTac, choiceArray);
                     turn = turn + 1;
+                    counter++;
                 }
                 else
                 {
                     char ticTac = 'O';
                     Game(ticTac, choiceArray);
                     turn = turn - 1;
+                    counter++;
                 }
                 
             }
-
-         if (sc2.CheckForWinner(choiceArray) >= 0)
-                Console.WriteLine($"Player {sc2.CheckForWinner(choiceArray)} has won the game!");
-         else
-                Console.WriteLine("It's a draw!");
          SupportingClass sc = new SupportingClass();
          sc.PrintchoiceArray(choiceArray);
+            if (sc2.CheckForWinner(choiceArray) > 0)
+                Console.WriteLine($"Player {sc2.CheckForWinner(choiceArray)} has won the game!");
+            else
+                Console.WriteLine("It's a draw!");
+
         }
 
         public static void Game(char ticTac, char[] choiceArray)
@@ -60,13 +63,16 @@ namespace TicTacToe
 
             numChoice = Int32.Parse(Console.ReadLine());
 
-            if (choiceArray[numChoice - 1] != ('X' | 'O'))
-                choiceArray[numChoice - 1] = ticTac;
-            else
-                Console.Write("That spot is already taken asshole!");
+            while (choiceArray[numChoice - 1] == 'X' || choiceArray[numChoice - 1] == 'O')
+            {
+                Console.Write("That spot is already taken asshole!\n");
+                Console.Write("Choose another position: ");
+                numChoice = Int32.Parse(Console.ReadLine());
+            }
 
-
+            choiceArray[numChoice - 1] = ticTac;
         }
     }
 }
+
 
