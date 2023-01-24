@@ -44,6 +44,8 @@ namespace TicTacToe
                 Console.WriteLine($"Player {sc2.CheckForWinner(choiceArray)} has won the game!");
          else
                 Console.WriteLine("It's a draw!");
+         SupportingClass sc = new SupportingClass();
+         sc.PrintchoiceArray(choiceArray);
         }
 
         public static void Game(char ticTac, char[] choiceArray)
@@ -58,7 +60,10 @@ namespace TicTacToe
 
             numChoice = Int32.Parse(Console.ReadLine());
 
-            choiceArray[numChoice - 1] = ticTac;
+            if (choiceArray[numChoice - 1] != ('X' | 'O'))
+                choiceArray[numChoice - 1] = ticTac;
+            else
+                Console.Write("That spot is already taken asshole!");
 
 
         }
