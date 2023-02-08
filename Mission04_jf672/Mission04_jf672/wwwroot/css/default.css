@@ -1,0 +1,28 @@
+﻿
+
+label{
+    width: 150px;
+    display: inline-block;
+
+}
+img{
+    width: 400px;
+    height: auto;
+}
+div.mydiv{
+    text-align: center;
+
+}
+ol.myOl{
+    display: inline-block;
+    text-align: left;
+}
+div.myFooter {
+    color: white;
+    text-align: center;
+}
+body {
+    font-family: 'Baskerville Old Face';
+    color: darkolivegreen;
+    background-color: navajowhite
+}
